@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".SearchActivity">
+
+    <!-- edit text to search songs-->
+    <EditText
+        android:id="@+id/idEdtSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darker_grey"
+        android:hint="What do you want to listen to?"
+        android:imeOptions="actionDone"
+        android:lines="1"
+        android:drawableStart="@drawable/search"
+        android:drawablePadding="8dp"
+        android:drawableTint="@color/grey"
+        android:padding="16dp"
+        android:singleLine="true"
+        android:textColor="@color/white"
+        android:textColorHint="@color/grey"
+        android:textStyle="bold" />
+
+    <!-- recycler view t display search results-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/idRVSongs"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/track_rv_item" />
+
+</LinearLayout>
