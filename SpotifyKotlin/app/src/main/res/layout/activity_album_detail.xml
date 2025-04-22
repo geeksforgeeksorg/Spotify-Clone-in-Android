@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".AlbumDetailActivity">
+
+    <!-- image view for displaying album image-->
+    <ImageView
+        android:id="@+id/idIVAlbum"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- text view for displaying album name-->
+    <TextView
+        android:id="@+id/idTVAlbumName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Search"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:maxLines="1"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintBottom_toTopOf="@id/idTVArtistName"
+        app:layout_constraintEnd_toStartOf="@+id/playButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/playButton" />
+
+    <!-- text view for displaying album artist-->
+    <TextView
+        android:id="@+id/idTVArtistName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:maxLines="1"
+        android:text="Artist Name"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/playButton"
+        app:layout_constraintEnd_toStartOf="@+id/playButton"
+        app:layout_constraintStart_toStartOf="@+id/idTVAlbumName"
+        app:layout_constraintTop_toBottomOf="@+id/idTVAlbumName" />
+
+    <!-- button to play album-->
+    <ImageView
+        android:id="@+id/playButton"
+        android:layout_width="82dp"
+        android:layout_height="82dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="4dp"
+        android:src="@drawable/play"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/idIVAlbum" />
+
+    <!-- recycler view to display tracks-->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvAlbumDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="4dp"
+        android:layout_marginTop="32dp"
+        android:orientation="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/playButton"
+        tools:layout_editor_absoluteX="4dp"
+        tools:listitem="@layout/track_rv_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
